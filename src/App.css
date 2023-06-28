@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navHeader {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(0, 0,0, 1), rgba(255, 255, 255, 0)75%);
+}
+#toggle {
+  background: #fff;
+  padding: .3rem;
+  display: inline;
+}
+.logo {
+  width: 50px;
+}
+.heroHeader {
+  width: 100%;
+  height: 100vh;
+}
+.heroHeader img {
+  width: 100%;
+  object-fit: fill;
+  object-position: center;
+  height: 100vh;
+  aspect-ratio: 2/2;
+}
+.navHeader ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+.navHeader nav a {
+  display: inline-block;
+  border: 1px solid;
+  padding: .4rem;
+  text-decoration: none;
+  color: #fff;
+  transition: ease 3s;
+}
+.navHeader nav a:hover {
+  transform: scale(.9);
+  background: linear-gradient(90deg, rgba(0, 0,0, 0.7), rgb(130, 123, 8));
+}
+.navHeader nav {
+  display: none;
+  justify-content: space-between;
+}
+
+.btnbook {
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(90deg, rgba(0, 0,0, 0.7), rgb(130, 123, 8));
+  transition: ease 3s;
+}
+.btnbook:hover {
+  transform: scale(.9);
+  background: black;
+}
+.overlay span {
+  color: #F4CE14;
+}
+
+small {
+  color: cyan;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(180deg, rgba(13, 0, 0, .7) 50%, 
+   rgba(73, 94, 87, 0.7) 0%);
+background-size: cover;
+color: #fff;
+  display: flex;
+  width: 100%;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100dvh;
+}
+.overlay h1 {
+  font-size: clamp(1rem, 5vw, 4rem)
+}
+.cardwrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+  justify-content: center;
+  gap: 30px;
+  padding: 1rem;
+}
+.card {
+  object-fit: cover;
+}
+h2 {
+  text-align: center;
+  padding: 2rem;
+}
+.card img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 2/2;
 }
 
-.App-link {
-  color: #61dafb;
+.pagesHerosection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(73, 94, 87, 0)), url('./img/dinning.jpg') no-repeat center bottom;
+  background-size: 100%;
+  /* object-fit: cover; */
+  color: #fff;
+  width: 100%;
+  padding-top: 4rem;
+}
+form {
+  border: 1px solid;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem;
+}
+button {
+  padding: .5rem 2rem;
+}
+input {
+  display: block;
+  padding: 0.3rem .5rem;
+  width: 500px;
+  max-width: 100%;
+  margin: .3rem 0 1rem;
+  border: 1px solid;
+}
+input:focus {
+  outline: none;
+}
+.testimony {
+  background-color: rgb(73, 94, 87);
+  color: #fff;
+}
+.testimony img {
+  width: 80px;
+}
+main {
+  padding: 4rem 0;
+}
+footer {
+  padding: 1rem 4rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 768px) {
+  .navHeader nav {
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+
+  #toggle {
+    display: none;
+  }
+  .cardwrapper {
+    padding: 0 !important;
+  }
+
+  .testimony {
+    padding: 2rem !important;
+  }
+  .navHeader {
+    padding: 1rem 4rem;
   }
 }
